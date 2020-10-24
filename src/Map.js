@@ -9,12 +9,31 @@ import {
 
 import states from "./data/states.json";
 import geoData from "./data/geo.json";
+import { convertMapData } from "./utils/convertMapData";
+import { parseURLMapData } from "./utils/parseURLMapData";
 
 const smallStates = ["VT", "NH", "MA", "RI", "CT", "NJ", "DE", "MD", "DC"];
 
 export default function Map() {
   const [stateData, setStateData] = useState(states);
   const [totals, setTotals] = useState({});
+  const [showLink, setShowLink] = useState(false);
+  const [link, setLink] = useState("");
+
+  useEffect(() => {
+    const queryString = window.location.search;
+    if (queryString) {
+      const urlParams = new URLSearchParams(queryString);
+      const map = urlParams.get("map");
+      if (map.length === 17) {
+        const b = parseURLMapData(map);
+        const data = stateData.map((el, index) => {
+          return { ...el, party: parseInt(b[index]) };
+        });
+        setStateData(data);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const data = stateData.reduce(
@@ -28,6 +47,12 @@ export default function Map() {
     );
     setTotals(data);
   }, [stateData]);
+
+  useEffect(() => {
+    if (showLink) {
+      setLink(convertMapData(stateData));
+    }
+  }, [showLink]);
 
   const handleStateClick = ({ id }) => {
     const newStateData = stateData.map((obj) => {
@@ -63,6 +88,10 @@ export default function Map() {
           style={{ width: (totals.rep / 538) * 100 + "%" }}
         ></div>
       </div>
+      <div>
+        <button onClick={() => setShowLink(!showLink)}>Share Map</button>
+        {showLink && <div>{`http://localhost:3000?map=${link}`}</div>}
+      </div>
       <ComposableMap projection="geoAlbersUsa">
         <Geographies geography={geoData}>
           {({ geographies }) => (
@@ -93,7 +122,7 @@ export default function Map() {
                           y="2"
                           fontSize={13}
                           textAnchor="middle"
-                          fill="#fff"
+                          fill={currentState.id === "HI" ? "#000" : "#fff"}
                         >
                           {currentState.id}
                         </text>
@@ -101,7 +130,7 @@ export default function Map() {
                           y="16"
                           fontSize={11}
                           textAnchor="middle"
-                          fill="#fff"
+                          fill={currentState.id === "HI" ? "#000" : "#fff"}
                         >
                           {currentState.votes}
                         </text>
