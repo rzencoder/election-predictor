@@ -11,8 +11,14 @@ import states from "./data/states.json";
 import geoData from "./data/geo.json";
 import { convertMapData } from "./utils/convertMapData";
 import { parseURLMapData } from "./utils/parseURLMapData";
+import {
+  handleDistrictColor,
+  handleStateColor,
+} from "./utils/handleStateColor";
+import SVGDefs from "./components/SVGDefs";
 
 const smallStates = ["VT", "NH", "MA", "RI", "CT", "NJ", "DE", "MD", "DC"];
+const districts = ["ME1", "ME2", "NE1", "NE2", "NE3"];
 
 export default function Map() {
   const [stateData, setStateData] = useState(states);
@@ -25,7 +31,7 @@ export default function Map() {
     if (queryString) {
       const urlParams = new URLSearchParams(queryString);
       const map = urlParams.get("map");
-      if (map.length === 17) {
+      if (map.length === 19) {
         const b = parseURLMapData(map);
         const data = stateData.map((el, index) => {
           return { ...el, party: parseInt(b[index]) };
@@ -38,14 +44,16 @@ export default function Map() {
   useEffect(() => {
     const data = stateData.reduce(
       (acc, cur) => {
-        if (cur.party === 1) acc.dem += cur.votes;
-        if (cur.party === 2) acc.rep += cur.votes;
-        if (cur.party === 0) acc.blank += cur.votes;
+        const votes = cur.id === "NE" ? 2 : cur.id === "ME" ? 2 : cur.votes;
+        if (cur.party === 1) acc.dem += votes;
+        if (cur.party === 2) acc.rep += votes;
+        if (cur.party === 0) acc.blank += votes;
         return acc;
       },
       { dem: 0, rep: 0, blank: 0 }
     );
     setTotals(data);
+    console.log(totals);
   }, [stateData]);
 
   useEffect(() => {
@@ -54,26 +62,44 @@ export default function Map() {
     }
   }, [showLink]);
 
-  const handleStateClick = ({ id }) => {
+  const handleStateClick = (id) => {
     const newStateData = stateData.map((obj) => {
-      const partyValue = obj.party === 2 ? 0 : obj.party + 1;
+      // Dem: 1, Rep: 2, Blank: 0
+      let partyValue = obj.party === 2 ? 0 : obj.party + 1;
+      // Find matching state from stateDate and assign party change
       return obj.val === id ? { ...obj, party: partyValue } : obj;
     });
+    // Change Nebraska districts to state party on state click
+    if (id === "31") {
+      newStateData[51].party = newStateData[27].party;
+      newStateData[52].party = newStateData[27].party;
+      newStateData[53].party = newStateData[27].party;
+    } else if (id === "23") {
+      // Change Maine districts to state party on state click
+      newStateData[54].party = newStateData[19].party;
+      newStateData[55].party = newStateData[19].party;
+    }
     setStateData(newStateData);
   };
 
-  function handleStateColor(geo) {
-    const { party } = stateData.find((s) => s.val === geo.id);
-    if (party === 0) return "#888";
-    if (party === 1) return "#00f";
-    if (party === 2) return "#f00";
-    return "#000";
-  }
+  const handleSmallStateClick = (id) => {
+    const newStateData = stateData.map((obj) => {
+      const partyValue = obj.party === 2 ? 0 : obj.party + 1;
+      return obj.id === id ? { ...obj, party: partyValue } : obj;
+    });
+    setStateData(newStateData);
+  };
 
   console.log("render map");
 
   return (
     <>
+      <div>
+        <h2>
+          <span>US</span>Presidential <span>Election</span>
+        </h2>
+        <p>Predictor</p>
+      </div>
       <div className="bar">
         <div
           className="dem"
@@ -92,20 +118,50 @@ export default function Map() {
         <button onClick={() => setShowLink(!showLink)}>Share Map</button>
         {showLink && <div>{`http://localhost:3000?map=${link}`}</div>}
       </div>
+      <div>
+        {smallStates.map((el) => {
+          const matchingState = stateData.find((s) => s.id == el);
+          const background = handleDistrictColor(matchingState);
+          return (
+            <button
+              style={{ background: background }}
+              onClick={() => {
+                handleSmallStateClick(el);
+              }}
+            >
+              {el}
+            </button>
+          );
+        })}
+      </div>
+      <div>
+        {districts.map((el) => {
+          return (
+            <button
+              onClick={() => {
+                handleSmallStateClick(el);
+              }}
+            >
+              {el}
+            </button>
+          );
+        })}
+      </div>
       <ComposableMap projection="geoAlbersUsa">
+        <SVGDefs stateData={stateData} />
         <Geographies geography={geoData}>
           {({ geographies }) => (
             <>
               {geographies.map((geo) => {
-                const fill = handleStateColor(geo);
+                const fill = handleStateColor(geo, stateData);
                 return (
                   <Geography
                     key={geo.rsmKey}
                     stroke="#FFF"
                     geography={geo}
-                    onClick={() => handleStateClick(geo)}
+                    onClick={() => handleStateClick(geo.id)}
                     fill={fill}
-                  />
+                  ></Geography>
                 );
               })}
               {geographies.map((geo) => {

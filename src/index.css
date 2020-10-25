@@ -33,3 +33,12 @@ svg {
   background: #888;
   height: 100%;
 }
+
+#nebraska {
+  background: purple;
+}
+
+.path {
+  stroke: black;
+  stroke-width: 1;
+}
