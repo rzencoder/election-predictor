@@ -12,6 +12,7 @@ import { handleStateColor } from "../../utils";
 import "./map.scss";
 
 export default function Map({ stateData, setStateData }) {
+  //Handle changing of state party on selection
   const handleStateClick = (id) => {
     const newStateData = stateData.map((obj) => {
       // Dem: 1, Rep: 2, Blank: 0
@@ -51,39 +52,43 @@ export default function Map({ stateData, setStateData }) {
                   ></Geography>
                 );
               })}
-              {geographies.map((geo) => {
-                const centroid = geoCentroid(geo);
-                const currentState = stateData.find((el) => el.val === geo.id);
-                if (smallStatesData.includes(currentState.id)) {
-                  return;
-                }
-                return (
-                  <g key={geo.rsmKey + "-state"}>
-                    {currentState && centroid[0] > -160 && centroid[0] < -67 && (
-                      <Marker coordinates={centroid}>
-                        <text
-                          y="2"
-                          onClick={() => handleStateClick(geo.id)}
-                          fontSize={13}
-                          textAnchor="middle"
-                          fill={currentState.id === "HI" ? "#000" : "#fff"}
-                        >
-                          {currentState.id}
-                        </text>
-                        <text
-                          y="16"
-                          onClick={() => handleStateClick(geo.id)}
-                          fontSize={11}
-                          textAnchor="middle"
-                          fill={currentState.id === "HI" ? "#000" : "#fff"}
-                        >
-                          {currentState.votes}
-                        </text>
-                      </Marker>
-                    )}
-                  </g>
-                );
-              })}
+              {
+                //Placement of state abbreviations annotations
+                geographies.map((geo) => {
+                  const centroid = geoCentroid(geo);
+                  const currentState = stateData.find(
+                    (el) => el.val === geo.id
+                  );
+                  // eslint-disable-next-line
+                  if (smallStatesData.includes(currentState.id)) return;
+                  return (
+                    <g key={geo.rsmKey + "-state"}>
+                      {currentState && centroid[0] > -160 && centroid[0] < -67 && (
+                        <Marker coordinates={centroid}>
+                          <text
+                            y="2"
+                            onClick={() => handleStateClick(geo.id)}
+                            fontSize={13}
+                            textAnchor="middle"
+                            fill={currentState.id === "HI" ? "#000" : "#fff"}
+                          >
+                            {currentState.id}
+                          </text>
+                          <text
+                            y="16"
+                            onClick={() => handleStateClick(geo.id)}
+                            fontSize={11}
+                            textAnchor="middle"
+                            fill={currentState.id === "HI" ? "#000" : "#fff"}
+                          >
+                            {currentState.votes}
+                          </text>
+                        </Marker>
+                      )}
+                    </g>
+                  );
+                })
+              }
             </>
           )}
         </Geographies>

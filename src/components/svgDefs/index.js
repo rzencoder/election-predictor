@@ -1,6 +1,8 @@
 import { getStateColor } from "../../utils";
 import "./svgDefs.scss";
 
+// Component to handle rendering of Nebraska and Maine states as they have state and district votes which could leading to a mix of parties. Linear gradients used to show this potential mix
+
 export default function SVGDefs({ stateData }) {
   const NE1 = getStateColor(stateData[51].party);
   const NE2 = getStateColor(stateData[52].party);

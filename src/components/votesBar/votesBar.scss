@@ -1,0 +1,22 @@
+@import "../../scss/_variables.scss";
+
+.bar {
+  height: 50px;
+  display: flex;
+  width: 600px;
+}
+
+.dem {
+  background: $demColor;
+  height: 100%;
+}
+
+.rep {
+  background: $repColor;
+  height: 100%;
+}
+
+.swing {
+  background: $blankColor;
+  height: 100%;
+}

@@ -6,7 +6,7 @@ export default function SmallStates({ stateData, handleSmallStateClick }) {
   return (
     <div className="panel">
       {smallStatesData.map((el) => {
-        const matchingState = stateData.find((s) => s.id == el);
+        const matchingState = stateData.find((s) => s.id === el);
         const background = getStateColor(matchingState.party);
         return (
           <div className="button-container">

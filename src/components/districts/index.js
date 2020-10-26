@@ -1,5 +1,4 @@
 import { getStateColor } from "../../utils";
-
 import "./districts.scss";
 
 const districts = {
@@ -8,6 +7,28 @@ const districts = {
 };
 
 export default function Districts({ stateData, handleSmallStateClick }) {
+  function renderStateDistricts(stateDistricts) {
+    return (
+      <tr>
+        <td>{stateDistricts[0]}</td>
+        {stateDistricts.map((el) => {
+          const matchingState = stateData.find((s) => s.id === el);
+          const background = getStateColor(matchingState.party);
+          return (
+            <td
+              style={{ backgroundColor: background }}
+              onClick={() => {
+                handleSmallStateClick(el);
+              }}
+            >
+              {matchingState.votes}
+            </td>
+          );
+        })}
+      </tr>
+    );
+  }
+
   return (
     <div className="panel">
       <table>
@@ -21,40 +42,8 @@ export default function Districts({ stateData, handleSmallStateClick }) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>NE</td>
-            {districts.nebraska.map((el) => {
-              const matchingState = stateData.find((s) => s.id == el);
-              const background = getStateColor(matchingState.party);
-              return (
-                <td
-                  style={{ backgroundColor: background }}
-                  onClick={() => {
-                    handleSmallStateClick(el);
-                  }}
-                >
-                  {matchingState.votes}
-                </td>
-              );
-            })}
-          </tr>
-          <tr>
-            <td>ME</td>
-            {districts.maine.map((el) => {
-              const matchingState = stateData.find((s) => s.id == el);
-              const background = getStateColor(matchingState.party);
-              return (
-                <td
-                  style={{ backgroundColor: background }}
-                  onClick={() => {
-                    handleSmallStateClick(el);
-                  }}
-                >
-                  {matchingState.votes}
-                </td>
-              );
-            })}
-          </tr>
+          {renderStateDistricts(districts.nebraska)}
+          {renderStateDistricts(districts.maine)}
         </tbody>
       </table>
     </div>

@@ -1,0 +1,26 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+}
+
+.small-state-button {
+  border: none;
+  color: white;
+  padding: 0.3em;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 0.6em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
+.small-state-name {
+  display: flex;
+  align-items: center;
+  font-size: 0.6em;
+}

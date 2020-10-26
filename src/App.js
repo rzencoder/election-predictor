@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Districts,
   Header,
@@ -6,32 +7,36 @@ import {
   VotesBar,
   ShareLink,
 } from "./components";
-import { useState, useEffect } from "react";
 import states from "./data/states.json";
 import { parseURLMapData } from "./utils";
 
 export default function App() {
   const [stateData, setStateData] = useState(states);
 
+  // Check if map url parameter and parse it into data to display in the map
   useEffect(() => {
     const queryString = window.location.search;
     if (queryString) {
       const urlParams = new URLSearchParams(queryString);
-      const map = urlParams.get("map");
-      if (map.length === 19) {
-        const b = parseURLMapData(map);
-        const data = stateData.map((el, index) => {
-          return { ...el, party: parseInt(b[index]) };
+      const mapParameter = urlParams.get("map");
+      // Checking if 19 as data stored in base 3. 50 states + 6 districts + blank
+      if (mapParameter.length === 19) {
+        const mapString = parseURLMapData(mapParameter);
+        const mapData = stateData.map((el, index) => {
+          return { ...el, party: parseInt(mapString[index]) };
         });
-        setStateData(data);
+        setStateData(mapData);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Handle clicking on states too small to click directly on the map
   const handleSmallStateClick = (id) => {
-    const newStateData = stateData.map((obj) => {
-      const partyValue = obj.party === 2 ? 0 : obj.party + 1;
-      return obj.id === id ? { ...obj, party: partyValue } : obj;
+    const newStateData = stateData.map((el) => {
+      // Change party when state selected and roll back to a blank if neither rep or dem.
+      const partyValue = el.party === 2 ? 0 : el.party + 1;
+      return el.id === id ? { ...el, party: partyValue } : el;
     });
     setStateData(newStateData);
   };
