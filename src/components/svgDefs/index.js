@@ -1,13 +1,14 @@
-import { handleDistrictColor } from "../utils/handleStateColor";
+import { getStateColor } from "../../utils";
+import "./svgDefs.scss";
 
 export default function SVGDefs({ stateData }) {
-  const NE1 = handleDistrictColor(stateData[51]);
-  const NE2 = handleDistrictColor(stateData[52]);
-  const NE3 = handleDistrictColor(stateData[53]);
-  const NE = handleDistrictColor(stateData[27]);
-  const ME1 = handleDistrictColor(stateData[54]);
-  const ME2 = handleDistrictColor(stateData[55]);
-  const ME = handleDistrictColor(stateData[19]);
+  const NE1 = getStateColor(stateData[51].party);
+  const NE2 = getStateColor(stateData[52].party);
+  const NE3 = getStateColor(stateData[53].party);
+  const NE = getStateColor(stateData[27].party);
+  const ME1 = getStateColor(stateData[54].party);
+  const ME2 = getStateColor(stateData[55].party);
+  const ME = getStateColor(stateData[19].party);
 
   return (
     <defs>

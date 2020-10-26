@@ -1,0 +1,82 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.25rem;
+}
+
+body {
+  margin: 0;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+}
+
+/* Map */
+
+.map-container {
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Small States*/
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+}
+
+.small-state-button {
+  border: none;
+  color: white;
+  padding: 0.3em;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 0.6em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
+.small-state-name {
+  display: flex;
+  align-items: center;
+  font-size: 0.6em;
+}
+
+/* Progress Bar */
+
+.bar {
+  height: 50px;
+  display: flex;
+  width: 600px;
+}
+
+.dem {
+  background: blue;
+  height: 100%;
+}
+
+.rep {
+  background: red;
+  height: 100%;
+}
+
+.swing {
+  background: #888;
+  height: 100%;
+}

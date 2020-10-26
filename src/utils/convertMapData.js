@@ -1,4 +1,4 @@
-export function convertMapData(data) {
+export default function convertMapData(data) {
   let mapData = data.map((el) => el.party.toString());
   const dataInBase3 = [];
   while (mapData.length > 0) {

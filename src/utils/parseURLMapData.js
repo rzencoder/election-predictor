@@ -1,4 +1,4 @@
-export function parseURLMapData(data) {
+export default function parseURLMapData(data) {
   const a = data.split("");
   const b = a
     .map((el) => {
