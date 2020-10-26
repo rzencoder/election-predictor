@@ -44,11 +44,11 @@ export default function Map({ stateData, setStateData }) {
                 const fill = handleStateColor(geo, stateData);
                 return (
                   <Geography
+                    class={`state ${fill}`}
                     key={geo.rsmKey}
                     stroke="#FFF"
                     geography={geo}
                     onClick={() => handleStateClick(geo.id)}
-                    fill={fill}
                   ></Geography>
                 );
               })}
@@ -62,12 +62,11 @@ export default function Map({ stateData, setStateData }) {
                   // eslint-disable-next-line
                   if (smallStatesData.includes(currentState.id)) return;
                   return (
-                    <g key={geo.rsmKey + "-state"}>
+                    <g key={geo.rsmKey + "-state"} className="state-label">
                       {currentState && centroid[0] > -160 && centroid[0] < -67 && (
                         <Marker coordinates={centroid}>
                           <text
                             y="2"
-                            onClick={() => handleStateClick(geo.id)}
                             fontSize={13}
                             textAnchor="middle"
                             fill={currentState.id === "HI" ? "#000" : "#fff"}
@@ -76,7 +75,6 @@ export default function Map({ stateData, setStateData }) {
                           </text>
                           <text
                             y="16"
-                            onClick={() => handleStateClick(geo.id)}
                             fontSize={11}
                             textAnchor="middle"
                             fill={currentState.id === "HI" ? "#000" : "#fff"}

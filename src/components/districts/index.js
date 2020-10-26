@@ -16,7 +16,7 @@ export default function Districts({ stateData, handleSmallStateClick }) {
           const background = getStateColor(matchingState.party);
           return (
             <td
-              style={{ backgroundColor: background }}
+              className={`${background}`}
               onClick={() => {
                 handleSmallStateClick(el);
               }}

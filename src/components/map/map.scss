@@ -1,4 +1,43 @@
+@import "../../scss/variables";
+
 .map-container {
   width: 80%;
   max-width: 800px;
+}
+
+.state {
+  cursor: pointer;
+}
+
+.state-label {
+  pointer-events: none;
+}
+
+.nebraska-state {
+  fill: url(#nebraska-style);
+}
+
+.maine-state {
+  fill: url(#maine-style);
+}
+
+.dem-state {
+  fill: $demColor;
+  &:hover {
+    fill: lighten($demColor, 10%);
+  }
+}
+
+.rep-state {
+  fill: $repColor;
+  &:hover {
+    fill: lighten($repColor, 10%);
+  }
+}
+
+.blank-state {
+  fill: $blankColor;
+  &:hover {
+    fill: darken($blankColor, 10%);
+  }
 }

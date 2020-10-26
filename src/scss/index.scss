@@ -16,3 +16,24 @@ body {
   width: 100%;
   font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 }
+
+.dem-state {
+  background-color: $demColor;
+  &:hover {
+    background-color: lighten($demColor, 10%);
+  }
+}
+
+.rep-state {
+  background-color: $repColor;
+  &:hover {
+    background-color: lighten($repColor, 10%);
+  }
+}
+
+.blank-state {
+  background-color: $blankColor;
+  &:hover {
+    background-color: darken($blankColor, 10%);
+  }
+}

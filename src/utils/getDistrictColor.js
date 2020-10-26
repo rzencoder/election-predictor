@@ -1,11 +1,13 @@
+import { demColor, repColor, blankColor } from "../constants/styles";
+
 export default function getStateColor(party) {
   switch (party) {
     case 0:
-      return "blank-state";
+      return blankColor;
     case 1:
-      return "dem-state";
+      return demColor;
     case 2:
-      return "rep-state";
+      return repColor;
     default:
       return "#000";
   }

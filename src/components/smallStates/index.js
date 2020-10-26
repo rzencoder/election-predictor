@@ -11,8 +11,7 @@ export default function SmallStates({ stateData, handleSmallStateClick }) {
         return (
           <div className="button-container">
             <div
-              className="small-state-button"
-              style={{ backgroundColor: background }}
+              className={`small-state-button ${background}`}
               onClick={() => {
                 handleSmallStateClick(el);
               }}
