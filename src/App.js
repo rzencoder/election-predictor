@@ -45,7 +45,6 @@ export default function App() {
     <main>
       <Header />
       <VotesBar stateData={stateData} />
-      <ShareLink stateData={stateData} />
       <div className="container">
         <Map stateData={stateData} setStateData={setStateData} />
         <SmallStates
@@ -57,6 +56,7 @@ export default function App() {
           handleSmallStateClick={handleSmallStateClick}
         />
       </div>
+      <ShareLink stateData={stateData} />
     </main>
   );
 }

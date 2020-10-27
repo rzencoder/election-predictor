@@ -1,3 +1,51 @@
-div {
-  color: red;
+@import "../../scss/variables";
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 24px;
+  @media screen and (max-width: 420px) {
+    font-size: 18px;
+  }
+}
+
+.header-title {
+  padding: 0;
+  margin: 0;
+  color: $repColor;
+}
+
+.title-span {
+  color: $demColor;
+}
+
+.header-subtitle {
+  margin: 5px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.header-star {
+  padding: 5px 3px;
+  font-size: 1em;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+
+.blue-star {
+  color: $demColor;
+  font-size: 1.2em;
+}
+
+.red-star {
+  color: $repColor;
+}
+
+.header-subtitle-text {
+  font-size: 1.1em;
+  padding: 0 0.7em;
 }
