@@ -4,7 +4,7 @@ import "./smallStates.scss";
 
 export default function SmallStates({ stateData, handleSmallStateClick }) {
   return (
-    <div className="panel">
+    <div className="small-states-container">
       {smallStatesData.map((el) => {
         const matchingState = stateData.find((s) => s.id === el);
         const background = getStateColor(matchingState.party);

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Confetti from "react-confetti";
 import "./votesBar.scss";
 
 export default function VotesBar({ stateData }) {
@@ -22,16 +23,32 @@ export default function VotesBar({ stateData }) {
   }, [stateData]);
 
   return (
-    <div className="bar">
-      <div className="dem" style={{ width: (totals.dem / 538) * 100 + "%" }}>
-        {totals.dem}
+    <div className="bar-container">
+      <div className="bar-markers">
+        <div>⏷</div>
+        <div className="marker-bottom">⏶</div>
       </div>
-      <div
-        className="swing"
-        style={{ width: (totals.blank / 538) * 100 + "%" }}
-      ></div>
-      <div className="rep" style={{ width: (totals.rep / 538) * 100 + "%" }}>
-        {totals.rep}
+      <div className="bar-labels">
+        <div>Democrats</div>
+        <div>Republicans</div>
+      </div>
+      <div className="bar">
+        <div
+          className="party-bar dem-bar"
+          style={{ width: (totals.dem / 538) * 100 + "%" }}
+        >
+          <div>{totals.dem}</div>
+        </div>
+        <div
+          className="swing-bar"
+          style={{ width: (totals.blank / 538) * 100 + "%" }}
+        ></div>
+        <div
+          className="party-bar rep-bar"
+          style={{ width: (totals.rep / 538) * 100 + "%" }}
+        >
+          <div>{totals.rep}</div>
+        </div>
       </div>
     </div>
   );

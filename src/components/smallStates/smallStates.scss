@@ -1,10 +1,21 @@
-.panel {
+.small-states-container {
   display: flex;
   flex-direction: column;
+  margin-top: 6em;
+  @media screen and (max-width: 600px) {
+    flex-direction: row;
+    margin: 0 10px;
+    flex-wrap: wrap;
+    font-size: 22px;
+    justify-content: center;
+  }
 }
 
 .button-container {
   display: flex;
+  @media screen and (max-width: 600px) {
+    width: 50px;
+  }
 }
 
 .small-state-button {
@@ -23,4 +34,8 @@
   display: flex;
   align-items: center;
   font-size: 0.6em;
+  @media screen and (max-width: 600px) {
+    align-items: flex-start;
+    padding-top: 5px;
+  }
 }

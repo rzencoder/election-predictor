@@ -47,14 +47,16 @@ export default function App() {
       <VotesBar stateData={stateData} />
       <div className="container">
         <Map stateData={stateData} setStateData={setStateData} />
-        <SmallStates
-          stateData={stateData}
-          handleSmallStateClick={handleSmallStateClick}
-        />
-        <Districts
-          stateData={stateData}
-          handleSmallStateClick={handleSmallStateClick}
-        />
+        <div className="states-panel">
+          <SmallStates
+            stateData={stateData}
+            handleSmallStateClick={handleSmallStateClick}
+          />
+          <Districts
+            stateData={stateData}
+            handleSmallStateClick={handleSmallStateClick}
+          />
+        </div>
       </div>
       <ShareLink stateData={stateData} />
     </main>

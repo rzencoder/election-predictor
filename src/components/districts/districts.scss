@@ -1,0 +1,35 @@
+.districts-container {
+  margin: 1em 0 0 -3em;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: calc(9px + 6 * ((100vw - 320px) / 680));
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+    margin: 0 10px;
+  }
+  @media screen and (min-width: 900px) {
+    font-size: 14px;
+  }
+}
+
+.table-headers {
+  font-weight: 700;
+}
+
+.district-numbers {
+  font-size: 0.9em;
+}
+
+.district-state-name {
+  font-weight: 700;
+}
+
+.district-votes {
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 0.8em;
+  height: 0.8em;
+}
