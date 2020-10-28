@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { convertMapData } from "../../utils";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import copyIcon from "./copy-icon.png";
 import "./shareLink.scss";
 
 export default function ShareLink({ stateData }) {
@@ -25,15 +26,23 @@ export default function ShareLink({ stateData }) {
 
   return (
     <div className="share-link-container">
-      <button onClick={() => setShowLink(!showLink)}>{"</> "}Share Map</button>
+      <button
+        className="share-link-button"
+        onClick={() => setShowLink(!showLink)}
+      >
+        {"</> "}Share Map
+      </button>
       {showLink && (
-        <div>
-          <div>{`http://localhost:3000?map=${link}`}</div>
+        <div className="link-copy">
+          <div className="link-text">{`http://localhost:3000?map=${link}`}</div>
           <CopyToClipboard
             text={`http://localhost:3000?map=${link}`}
             onCopy={() => setCopied(true)}
           >
-            <button>Copy</button>
+            <button className="copy-button">
+              <img src={copyIcon} alt="" />
+              Copy
+            </button>
           </CopyToClipboard>
         </div>
       )}
