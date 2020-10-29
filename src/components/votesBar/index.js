@@ -39,7 +39,7 @@ export default function VotesBar({ stateData }) {
               totals.dem > 269 ? "dem-confetti" : "rep-confetti"
             }`}
             colors={totals.dem > 269 ? [demColor] : [repColor]}
-            width={size.width / 2}
+            width={size.width}
             height={size.height}
             inset="none"
           />
@@ -49,7 +49,7 @@ export default function VotesBar({ stateData }) {
       </div>
       <div className="bar">
         <div
-          className="party-bar dem-bar"
+          className={`party-bar dem-bar ${totals.dem > 269 && "win"}`}
           style={{ width: (totals.dem / 538) * 100 + "%" }}
         >
           <div>{totals.dem}</div>
@@ -59,7 +59,7 @@ export default function VotesBar({ stateData }) {
           style={{ width: (totals.blank / 538) * 100 + "%" }}
         ></div>
         <div
-          className="party-bar rep-bar"
+          className={`party-bar rep-bar ${totals.rep > 269 && "win"}`}
           style={{ width: (totals.rep / 538) * 100 + "%" }}
         >
           <div>{totals.rep}</div>
