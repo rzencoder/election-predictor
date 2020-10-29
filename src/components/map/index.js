@@ -35,20 +35,29 @@ export default function Map({ stateData, setStateData }) {
 
   return (
     <div className="map-container">
-      <ComposableMap projection="geoAlbersUsa">
+      <ComposableMap
+        aria-label="Map of United States"
+        projection="geoAlbersUsa"
+      >
         <SVGDefs stateData={stateData} />
         <Geographies geography={geoData}>
           {({ geographies }) => (
             <>
               {geographies.map((geo) => {
                 const fill = handleStateColor(geo, stateData);
+                const matchingState = stateData.find((s) => s.val === geo.id);
                 return (
                   <Geography
-                    class={`state ${fill}`}
+                    className={`state ${fill}`}
                     key={geo.rsmKey}
                     stroke="#FFF"
                     geography={geo}
+                    role="button"
+                    aria-label={`${matchingState.id} map state`}
                     onClick={() => handleStateClick(geo.id)}
+                    onKeyDown={({ key }) => {
+                      key === "Enter" && handleStateClick(geo.id);
+                    }}
                   ></Geography>
                 );
               })}

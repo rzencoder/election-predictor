@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import { useWindowSize } from "../../hooks/use-window";
+import { demColor, repColor } from "../../constants/styles";
 import Confetti from "react-confetti";
 import "./votesBar.scss";
 
 export default function VotesBar({ stateData }) {
   const [totals, setTotals] = useState({});
+  const [animations, setAnimations] = useState(true);
+  const size = useWindowSize();
 
   // Updated total votes for each party when state data is changed
   useEffect(() => {
@@ -23,14 +27,25 @@ export default function VotesBar({ stateData }) {
   }, [stateData]);
 
   return (
-    <div className="bar-container">
+    <section className="bar-container">
       <div className="bar-markers">
         <div>⏷</div>
         <div className="marker-bottom">⏶</div>
       </div>
       <div className="bar-labels">
-        <div>Democrats</div>
-        <div>Republicans</div>
+        {animations && (totals.dem > 269 || totals.rep > 269) && (
+          <Confetti
+            className={`confetti-container ${
+              totals.dem > 269 ? "dem-confetti" : "rep-confetti"
+            }`}
+            colors={totals.dem > 269 ? [demColor] : [repColor]}
+            width={size.width / 2}
+            height={size.height}
+            inset="none"
+          />
+        )}
+        <div>Democrats {totals.dem > 269 && "Win"}</div>
+        <div>Republicans {totals.rep > 269 && "Win"}</div>
       </div>
       <div className="bar">
         <div
@@ -50,6 +65,18 @@ export default function VotesBar({ stateData }) {
           <div>{totals.rep}</div>
         </div>
       </div>
-    </div>
+      <div className="animations">
+        <div className="animations-text">Animations</div>
+        <label className="switch">
+          <input
+            checked={animations}
+            type="checkbox"
+            aria-label="toggle-animations"
+            onChange={() => setAnimations(!animations)}
+          />
+          <span className="slider round"></span>
+        </label>
+      </div>
+    </section>
   );
 }

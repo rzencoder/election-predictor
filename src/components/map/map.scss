@@ -42,6 +42,6 @@
 .blank-state {
   fill: $blankColor;
   &:hover {
-    fill: darken($blankColor, 10%);
+    fill: lighten($blankColor, 10%);
   }
 }

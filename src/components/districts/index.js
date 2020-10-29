@@ -16,16 +16,20 @@ export default function Districts({ stateData, handleSmallStateClick }) {
           const background = getStateColor(matchingState.party);
           return (
             <td
+              key={`${matchingState.id}-district`}
               className={`district-votes ${background}`}
-              onClick={() => {
-                handleSmallStateClick(el);
-              }}
             >
-              {matchingState.id === "NE"
-                ? 2
-                : matchingState.id === "ME"
-                ? 2
-                : matchingState.votes}
+              <button
+                onClick={() => {
+                  handleSmallStateClick(el);
+                }}
+              >
+                {matchingState.id === "NE"
+                  ? 2
+                  : matchingState.id === "ME"
+                  ? 2
+                  : matchingState.votes}
+              </button>
             </td>
           );
         })}
@@ -39,8 +43,8 @@ export default function Districts({ stateData, handleSmallStateClick }) {
         <thead>
           <tr className="table-headers">
             <td></td>
-            <td rowspan="2">state</td>
-            <td colspan="3">districts</td>
+            <td rowSpan="2">state</td>
+            <td colSpan="3">districts</td>
           </tr>
           <tr className="district-numbers">
             <td></td>

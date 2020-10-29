@@ -7,7 +7,7 @@ import "./shareLink.scss";
 export default function ShareLink({ stateData }) {
   const [showLink, setShowLink] = useState(false);
   const [link, setLink] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false); // eslint-disable-line no-unused-vars
 
   // Convert state data into a url parameter for sharing on selection
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function ShareLink({ stateData }) {
   }, [stateData]);
 
   return (
-    <div className="share-link-container">
+    <section className="share-link-container">
       <button
         className="share-link-button"
         onClick={() => setShowLink(!showLink)}
@@ -46,6 +46,6 @@ export default function ShareLink({ stateData }) {
           </CopyToClipboard>
         </div>
       )}
-    </div>
+    </section>
   );
 }

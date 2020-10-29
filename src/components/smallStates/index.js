@@ -9,15 +9,15 @@ export default function SmallStates({ stateData, handleSmallStateClick }) {
         const matchingState = stateData.find((s) => s.id === el);
         const background = getStateColor(matchingState.party);
         return (
-          <div className="button-container">
-            <div
+          <div key={`${matchingState.id}-state`} className="button-container">
+            <button
               className={`small-state-button ${background}`}
               onClick={() => {
                 handleSmallStateClick(el);
               }}
             >
               {matchingState.votes}
-            </div>
+            </button>
             <div className="small-state-name">
               <div>{el}</div>
             </div>

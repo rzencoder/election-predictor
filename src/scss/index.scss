@@ -15,9 +15,13 @@ body {
   justify-content: center;
   width: 100%;
   font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  margin-top: -3em;
   @media screen and (max-width: 600px) {
     flex-direction: column;
     align-items: center;
+  }
+  @media screen and (min-width: 1100px) {
+    font-size: 22px;
   }
 }
 
@@ -38,7 +42,7 @@ body {
 .blank-state {
   background-color: $blankColor;
   &:hover {
-    background-color: darken($blankColor, 10%);
+    background-color: lighten($blankColor, 10%);
   }
 }
 
