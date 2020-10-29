@@ -29,8 +29,8 @@ export default function VotesBar({ stateData }) {
   return (
     <section className="bar-container">
       <div className="bar-markers">
-        <div>⏷</div>
-        <div className="marker-bottom">⏶</div>
+        <div className="markers marker-top" />
+        <div className="markers marker-bottom" />
       </div>
       <div className="bar-labels">
         {animations && (totals.dem > 269 || totals.rep > 269) && (
