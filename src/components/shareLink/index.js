@@ -9,6 +9,8 @@ export default function ShareLink({ stateData }) {
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false); // eslint-disable-line no-unused-vars
 
+  const linkURL = process.env.REACT_APP_LINK_URL || "http://localhost:3000";
+
   // Convert state data into a url parameter for sharing on selection
   useEffect(() => {
     if (showLink) {
@@ -34,9 +36,9 @@ export default function ShareLink({ stateData }) {
       </button>
       {showLink && (
         <div className="link-copy">
-          <div className="link-text">{`http://localhost:3000?map=${link}`}</div>
+          <div className="link-text">{`${linkURL}?map=${link}`}</div>
           <CopyToClipboard
-            text={`http://localhost:3000?map=${link}`}
+            text={`${linkURL}?map=${link}`}
             onCopy={() => setCopied(true)}
           >
             <button className="copy-button">
