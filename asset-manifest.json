@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/election-predictor/static/css/main.381a4f51.chunk.css",
-    "main.js": "/election-predictor/static/js/main.a8a49a93.chunk.js",
-    "main.js.map": "/election-predictor/static/js/main.a8a49a93.chunk.js.map",
+    "main.css": "/election-predictor/static/css/main.2ca1d99a.chunk.css",
+    "main.js": "/election-predictor/static/js/main.20b4787f.chunk.js",
+    "main.js.map": "/election-predictor/static/js/main.20b4787f.chunk.js.map",
     "runtime-main.js": "/election-predictor/static/js/runtime-main.3f99cc8a.js",
     "runtime-main.js.map": "/election-predictor/static/js/runtime-main.3f99cc8a.js.map",
-    "static/js/2.84f8edc7.chunk.js": "/election-predictor/static/js/2.84f8edc7.chunk.js",
-    "static/js/2.84f8edc7.chunk.js.map": "/election-predictor/static/js/2.84f8edc7.chunk.js.map",
+    "static/js/2.3db5c0e0.chunk.js": "/election-predictor/static/js/2.3db5c0e0.chunk.js",
+    "static/js/2.3db5c0e0.chunk.js.map": "/election-predictor/static/js/2.3db5c0e0.chunk.js.map",
     "index.html": "/election-predictor/index.html",
-    "static/css/main.381a4f51.chunk.css.map": "/election-predictor/static/css/main.381a4f51.chunk.css.map",
-    "static/js/2.84f8edc7.chunk.js.LICENSE.txt": "/election-predictor/static/js/2.84f8edc7.chunk.js.LICENSE.txt"
+    "static/css/main.2ca1d99a.chunk.css.map": "/election-predictor/static/css/main.2ca1d99a.chunk.css.map",
+    "static/js/2.3db5c0e0.chunk.js.LICENSE.txt": "/election-predictor/static/js/2.3db5c0e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3f99cc8a.js",
-    "static/js/2.84f8edc7.chunk.js",
-    "static/css/main.381a4f51.chunk.css",
-    "static/js/main.a8a49a93.chunk.js"
+    "static/js/2.3db5c0e0.chunk.js",
+    "static/css/main.2ca1d99a.chunk.css",
+    "static/js/main.20b4787f.chunk.js"
   ]
 }
