@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useWindowSize } from "../../hooks/use-window";
+import { useWindowSize } from "../../hooks/use-window-size";
 import { demColor, repColor } from "../../constants/styles";
+import AnimationToggle from "../animationToggle";
 import Confetti from "react-confetti";
 import "./votesBar.scss";
 
@@ -33,17 +34,21 @@ export default function VotesBar({ stateData }) {
         <div className="markers marker-bottom" />
       </div>
       <div className="bar-labels">
-        {animations && (totals.dem > 269 || totals.rep > 269) && (
-          <Confetti
-            className={`confetti-container ${
-              totals.dem > 269 ? "dem-confetti" : "rep-confetti"
-            }`}
-            colors={totals.dem > 269 ? [demColor] : [repColor]}
-            width={size.width}
-            height={size.height}
-            inset="none"
-          />
-        )}
+        {
+          // Check if theres a party with enough votes to win and user hasn't switched off animations. Then checking which party won to apply suitable styling.
+          animations && (totals.dem > 269 || totals.rep > 269) && (
+            <Confetti
+              className={`confetti-container ${
+                totals.dem > 269 ? "dem-confetti" : "rep-confetti"
+              }`}
+              colors={totals.dem > 269 ? [demColor] : [repColor]}
+              width={size.width}
+              height={size.height}
+              numberOfPieces={size.width > 600 ? 180 : 100}
+              inset="none"
+            />
+          )
+        }
         <div>Democrats {totals.dem > 269 && "Win"}</div>
         <div>Republicans {totals.rep > 269 && "Win"}</div>
       </div>
@@ -65,18 +70,7 @@ export default function VotesBar({ stateData }) {
           <div>{totals.rep}</div>
         </div>
       </div>
-      <div className="animations">
-        <div className="animations-text">Animations</div>
-        <label className="switch">
-          <input
-            checked={animations}
-            type="checkbox"
-            aria-label="toggle-animations"
-            onChange={() => setAnimations(!animations)}
-          />
-          <span className="slider round"></span>
-        </label>
-      </div>
+      <AnimationToggle setAnimations={setAnimations} animations={animations} />
     </section>
   );
 }

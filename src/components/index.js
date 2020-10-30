@@ -5,3 +5,4 @@ export { default as SVGDefs } from "./svgDefs";
 export { default as VotesBar } from "./votesBar";
 export { default as ShareLink } from "./shareLink";
 export { default as Districts } from "./districts";
+export { default as AnimationToggle } from "./animationToggle";

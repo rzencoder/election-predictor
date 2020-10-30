@@ -1,12 +1,9 @@
 import { getStateColor } from "../../utils";
+import districts from "../../data/districts.json";
 import "./districts.scss";
 
-const districts = {
-  nebraska: ["NE", "NE1", "NE2", "NE3"],
-  maine: ["ME", "ME1", "ME2"],
-};
-
 export default function Districts({ stateData, handleSmallStateClick }) {
+  // Render a table row for Maine and Nebraska
   function renderStateDistricts(stateDistricts) {
     return (
       <tr>

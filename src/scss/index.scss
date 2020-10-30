@@ -3,7 +3,6 @@
 
 html {
   font-family: $fontStack;
-  font-size: 1.25rem;
 }
 
 body {
@@ -25,8 +24,18 @@ body {
   }
 }
 
+.states-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 600px) {
+    flex-direction: row;
+  }
+}
+
 .dem-state {
   background-color: $demColor;
+  transition: background-color 0.3s;
   &:hover {
     background-color: lighten($demColor, 10%);
   }
@@ -34,6 +43,7 @@ body {
 
 .rep-state {
   background-color: $repColor;
+  transition: background-color 0.3s;
   &:hover {
     background-color: lighten($repColor, 10%);
   }
@@ -41,16 +51,8 @@ body {
 
 .blank-state {
   background-color: $blankColor;
+  transition: background-color 0.3s;
   &:hover {
     background-color: lighten($blankColor, 10%);
-  }
-}
-
-.states-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  @media screen and (max-width: 600px) {
-    flex-direction: row;
   }
 }

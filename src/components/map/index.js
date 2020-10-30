@@ -62,7 +62,7 @@ export default function Map({ stateData, setStateData }) {
                 );
               })}
               {
-                //Placement of state abbreviations annotations
+                // Placement of state abbreviations annotations
                 geographies.map((geo) => {
                   const centroid = geoCentroid(geo);
                   const currentState = stateData.find(
