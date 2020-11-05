@@ -1,3 +1,3 @@
-export const demColor = "#1c53d3";
-export const repColor = "#df1919";
+export const demColor = "#1375b6";
+export const repColor = "#c9282d";
 export const blankColor = "#97804a";

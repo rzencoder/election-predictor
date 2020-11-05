@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -11,7 +12,7 @@ import smallStatesData from "../../data/smallStates.json";
 import { handleStateColor } from "../../utils";
 import "./map.scss";
 
-export default function Map({ stateData, setStateData }) {
+function Map({ stateData, setStateData, setTooltipContent }) {
   //Handle changing of state party on selection
   const handleStateClick = (id) => {
     const newStateData = stateData.map((obj) => {
@@ -38,6 +39,7 @@ export default function Map({ stateData, setStateData }) {
       <ComposableMap
         aria-label="Map of United States"
         projection="geoAlbersUsa"
+        data-tip=""
       >
         <SVGDefs stateData={stateData} />
         <Geographies geography={geoData}>
@@ -57,6 +59,12 @@ export default function Map({ stateData, setStateData }) {
                     onClick={() => handleStateClick(geo.id)}
                     onKeyDown={({ key }) => {
                       key === "Enter" && handleStateClick(geo.id);
+                    }}
+                    onMouseEnter={() => {
+                      setTooltipContent(geo.id);
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent(null);
                     }}
                   ></Geography>
                 );
@@ -103,3 +111,5 @@ export default function Map({ stateData, setStateData }) {
     </div>
   );
 }
+
+export default memo(Map);

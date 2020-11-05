@@ -3,15 +3,18 @@ import { useWindowSize } from "../../hooks/use-window-size";
 import { demColor, repColor } from "../../constants/styles";
 import AnimationToggle from "../animationToggle";
 import Confetti from "react-confetti";
+import CountUp from "react-countup";
 import "./votesBar.scss";
 
 export default function VotesBar({ stateData }) {
-  const [totals, setTotals] = useState({});
+  const [totals, setTotals] = useState({ dem: 0, rep: 0, blank: 0 });
+  const [prevTotals, setPrevTotals] = useState({ dem: 0, rep: 0, blank: 0 });
   const [animations, setAnimations] = useState(true);
   const size = useWindowSize();
 
   // Updated total votes for each party when state data is changed
   useEffect(() => {
+    setPrevTotals({ ...totals });
     const data = stateData.reduce(
       (acc, cur) => {
         // Nebraska and Maine have state and district votes so count state votes as two and district as one
@@ -57,7 +60,7 @@ export default function VotesBar({ stateData }) {
           className={`party-bar dem-bar ${totals.dem > 269 && "win"}`}
           style={{ width: (totals.dem / 538) * 100 + "%" }}
         >
-          <div>{totals.dem}</div>
+          <CountUp start={prevTotals.dem} end={totals.dem} />
         </div>
         <div
           className="swing-bar"
@@ -67,7 +70,7 @@ export default function VotesBar({ stateData }) {
           className={`party-bar rep-bar ${totals.rep > 269 && "win"}`}
           style={{ width: (totals.rep / 538) * 100 + "%" }}
         >
-          <div>{totals.rep}</div>
+          <CountUp start={prevTotals.rep} end={totals.rep} />
         </div>
       </div>
       <AnimationToggle setAnimations={setAnimations} animations={animations} />

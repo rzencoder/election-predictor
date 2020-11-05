@@ -28,12 +28,14 @@ export default function ShareLink({ stateData }) {
 
   return (
     <section className="share-link-container">
-      <button
-        className="share-link-button"
-        onClick={() => setShowLink(!showLink)}
-      >
-        {"</> "}Share Map
-      </button>
+      {!showLink && (
+        <button
+          className="share-link-button"
+          onClick={() => setShowLink(!showLink)}
+        >
+          {"</> "}Share Map
+        </button>
+      )}
       {showLink && (
         <div className="link-copy">
           <div className="link-text">{`${linkURL}?map=${link}`}</div>

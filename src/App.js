@@ -9,9 +9,53 @@ import {
 } from "./components";
 import states from "./data/states.json";
 import { parseURLMapData } from "./utils";
+import ReactTooltip from "react-tooltip";
+import { demColor, repColor } from "./constants/styles";
 
 export default function App() {
   const [stateData, setStateData] = useState(states);
+  const [content, setContent] = useState(null);
+
+  function getPresident(year, party) {
+    if (year === 2020) {
+      return party === 1 ? "Biden" : "Trump";
+    } else if (year === 2016) {
+      return party === 1 ? "Clinton" : "Trump";
+    } else if (year === 2012) {
+      return party === 1 ? "Obama" : "Romney";
+    } else if (year === 2008) {
+      return party === 1 ? "Obama" : "McCain";
+    }
+  }
+
+  function renderTooltip() {
+    if (!content) return null;
+    const matchingState = stateData.find((s) => s.val === content);
+    return (
+      <div>
+        <div className="tooltip-state">{matchingState.name}</div>
+        <div className="tooltip-year">
+          {matchingState.votes} electoral votes
+        </div>
+        <div className="tooltip-history">
+          <div>History</div>
+          <ul>
+            {matchingState.history.map((el) => {
+              const color = el.party === 1 ? demColor : repColor;
+              return (
+                <li
+                  key={`${matchingState.name}-${el.year}-history`}
+                  style={{ color: color }}
+                >
+                  {el.year} {getPresident(el.year, el.party)}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    );
+  }
 
   // Check if map url parameter and parse it into data to display in the map
   useEffect(() => {
@@ -41,12 +85,21 @@ export default function App() {
     setStateData(newStateData);
   };
 
+  console.log(content);
+
   return (
     <main>
       <Header />
       <VotesBar stateData={stateData} />
       <section className="container">
-        <Map stateData={stateData} setStateData={setStateData} />
+        <Map
+          stateData={stateData}
+          setStateData={setStateData}
+          setTooltipContent={setContent}
+        />
+        <ReactTooltip className="tooltip-container">
+          {renderTooltip()}
+        </ReactTooltip>
         <aside className="states-panel">
           <SmallStates
             stateData={stateData}

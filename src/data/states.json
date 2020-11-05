@@ -1,59 +1,686 @@
 [
-  { "id": "AL", "val": "01", "votes": 9, "party": 2 },
-  { "id": "AK", "val": "02", "votes": 3, "party": 2 },
-  { "id": "AZ", "val": "04", "votes": 11, "party": 0 },
-  { "id": "AR", "val": "05", "votes": 6, "party": 2 },
-  { "id": "CA", "val": "06", "votes": 55, "party": 1 },
-  { "id": "CO", "val": "08", "votes": 9, "party": 1 },
-  { "id": "CT", "val": "09", "votes": 7, "party": 1 },
-  { "id": "DE", "val": "10", "votes": 3, "party": 1 },
-  { "id": "DC", "val": "11", "votes": 3, "party": 1 },
-  { "id": "FL", "val": "12", "votes": 29, "party": 0 },
-  { "id": "GA", "val": "13", "votes": 16, "party": 0 },
-  { "id": "HI", "val": "15", "votes": 4, "party": 1 },
-  { "id": "ID", "val": "16", "votes": 4, "party": 2 },
-  { "id": "IL", "val": "17", "votes": 20, "party": 1 },
-  { "id": "IN", "val": "18", "votes": 11, "party": 2 },
-  { "id": "IA", "val": "19", "votes": 6, "party": 0 },
-  { "id": "KS", "val": "20", "votes": 6, "party": 2 },
-  { "id": "KY", "val": "21", "votes": 8, "party": 2 },
-  { "id": "LA", "val": "22", "votes": 8, "party": 2 },
-  { "id": "ME", "val": "23", "votes": 4, "party": 1 },
-  { "id": "MD", "val": "24", "votes": 10, "party": 1 },
-  { "id": "MA", "val": "25", "votes": 11, "party": 1 },
-  { "id": "MI", "val": "26", "votes": 16, "party": 1 },
-  { "id": "MN", "val": "27", "votes": 10, "party": 1 },
-  { "id": "MS", "val": "28", "votes": 6, "party": 2 },
-  { "id": "MO", "val": "29", "votes": 10, "party": 2 },
-  { "id": "MT", "val": "30", "votes": 3, "party": 2 },
-  { "id": "NE", "val": "31", "votes": 5, "party": 2 },
-  { "id": "NV", "val": "32", "votes": 6, "party": 0 },
-  { "id": "NH", "val": "33", "votes": 4, "party": 1 },
-  { "id": "NJ", "val": "34", "votes": 14, "party": 1 },
-  { "id": "NM", "val": "35", "votes": 5, "party": 1 },
-  { "id": "NY", "val": "36", "votes": 29, "party": 1 },
-  { "id": "NC", "val": "37", "votes": 15, "party": 0 },
-  { "id": "ND", "val": "38", "votes": 3, "party": 2 },
-  { "id": "OH", "val": "39", "votes": 18, "party": 0 },
-  { "id": "OK", "val": "40", "votes": 7, "party": 2 },
-  { "id": "OR", "val": "41", "votes": 7, "party": 1 },
-  { "id": "PA", "val": "42", "votes": 20, "party": 0 },
-  { "id": "RI", "val": "44", "votes": 4, "party": 1 },
-  { "id": "SC", "val": "45", "votes": 9, "party": 2 },
-  { "id": "SD", "val": "46", "votes": 3, "party": 2 },
-  { "id": "TN", "val": "47", "votes": 11, "party": 2 },
-  { "id": "TX", "val": "48", "votes": 38, "party": 2 },
-  { "id": "UT", "val": "49", "votes": 6, "party": 2 },
-  { "id": "VT", "val": "50", "votes": 3, "party": 1 },
-  { "id": "VA", "val": "51", "votes": 13, "party": 1 },
-  { "id": "WA", "val": "53", "votes": 12, "party": 1 },
-  { "id": "WV", "val": "54", "votes": 5, "party": 2 },
-  { "id": "WI", "val": "55", "votes": 10, "party": 1 },
-  { "id": "WY", "val": "56", "votes": 3, "party": 2 },
-  { "id": "NE1", "val": "100", "votes": 1, "party": 2 },
-  { "id": "NE2", "val": "101", "votes": 1, "party": 0 },
-  { "id": "NE3", "val": "102", "votes": 1, "party": 2 },
-  { "id": "ME1", "val": "103", "votes": 1, "party": 1 },
-  { "id": "ME2", "val": "104", "votes": 1, "party": 0 },
-  { "id": "BLANK", "val": "999", "votes": 0, "party": 0 }
+  {
+    "id": "AL",
+    "val": "01",
+    "votes": 9,
+    "party": 2,
+    "name": "Alabama",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "AK",
+    "val": "02",
+    "votes": 3,
+    "party": 2,
+    "name": "Alaska",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "AZ",
+    "val": "04",
+    "votes": 11,
+    "party": 0,
+    "name": "Arizona",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "AR",
+    "val": "05",
+    "votes": 6,
+    "party": 2,
+    "name": "Arkansas",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "CA",
+    "val": "06",
+    "votes": 55,
+    "party": 1,
+    "name": "California",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "CO",
+    "val": "08",
+    "votes": 9,
+    "party": 1,
+    "name": "Colorado",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "CT",
+    "val": "09",
+    "votes": 7,
+    "party": 1,
+    "name": "Connecticut",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "DE",
+    "val": "10",
+    "votes": 3,
+    "party": 1,
+    "name": "Delaware",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "DC",
+    "val": "11",
+    "votes": 3,
+    "party": 1,
+    "name": "District of Columbia",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "FL",
+    "val": "12",
+    "votes": 29,
+    "party": 0,
+    "name": "Florida",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "GA",
+    "val": "13",
+    "votes": 16,
+    "party": 0,
+    "name": "Georgia",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "HI",
+    "val": "15",
+    "votes": 4,
+    "party": 1,
+    "name": "Hawaii",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "ID",
+    "val": "16",
+    "votes": 4,
+    "party": 2,
+    "name": "Idaho",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "IL",
+    "val": "17",
+    "votes": 20,
+    "party": 1,
+    "name": "Illinois",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "IN",
+    "val": "18",
+    "votes": 11,
+    "party": 2,
+    "name": "Indiana",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "IA",
+    "val": "19",
+    "votes": 6,
+    "party": 0,
+    "name": "Iowa",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "KS",
+    "val": "20",
+    "votes": 6,
+    "party": 2,
+    "name": "Kansas",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "KY",
+    "val": "21",
+    "votes": 8,
+    "party": 2,
+    "name": "Kentucky",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "LA",
+    "val": "22",
+    "votes": 8,
+    "party": 2,
+    "name": "Louisiana",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "ME",
+    "val": "23",
+    "votes": 4,
+    "party": 1,
+    "name": "Maine",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "MD",
+    "val": "24",
+    "votes": 10,
+    "party": 1,
+    "name": "Maryland",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "MA",
+    "val": "25",
+    "votes": 11,
+    "party": 1,
+    "name": "Massachusetts",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "MI",
+    "val": "26",
+    "votes": 16,
+    "party": 1,
+    "name": "Michigan",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "MN",
+    "val": "27",
+    "votes": 10,
+    "party": 1,
+    "name": "Minnesota",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "MS",
+    "val": "28",
+    "votes": 6,
+    "party": 2,
+    "name": "Mississippi",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "MO",
+    "val": "29",
+    "votes": 10,
+    "party": 2,
+    "name": "Missouri",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "MT",
+    "val": "30",
+    "votes": 3,
+    "party": 2,
+    "name": "Montana",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "NE",
+    "val": "31",
+    "votes": 5,
+    "party": 2,
+    "name": "Nebraska",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "NV",
+    "val": "32",
+    "votes": 6,
+    "party": 0,
+    "name": "Nevada",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NH",
+    "val": "33",
+    "votes": 4,
+    "party": 1,
+    "name": "New Hampshire",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NJ",
+    "val": "34",
+    "votes": 14,
+    "party": 1,
+    "name": "New Jersey",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NM",
+    "val": "35",
+    "votes": 5,
+    "party": 1,
+    "name": "New Mexico",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NY",
+    "val": "36",
+    "votes": 29,
+    "party": 1,
+    "name": "New York",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NC",
+    "val": "37",
+    "votes": 15,
+    "party": 0,
+    "name": "North Carolina",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "ND",
+    "val": "38",
+    "votes": 3,
+    "party": 2,
+    "name": "North Dakota",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "OH",
+    "val": "39",
+    "votes": 18,
+    "party": 0,
+    "name": "Ohio",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "OK",
+    "val": "40",
+    "votes": 7,
+    "party": 2,
+    "name": "Oklahoma",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "OR",
+    "val": "41",
+    "votes": 7,
+    "party": 1,
+    "name": "Oregon",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "PA",
+    "val": "42",
+    "votes": 20,
+    "party": 0,
+    "name": "Pennsylvania",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "RI",
+    "val": "44",
+    "votes": 4,
+    "party": 1,
+    "name": "Rhode Island",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "SC",
+    "val": "45",
+    "votes": 9,
+    "party": 2,
+    "name": "South Carolina",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "SD",
+    "val": "46",
+    "votes": 3,
+    "party": 2,
+    "name": "South Dakota",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "TN",
+    "val": "47",
+    "votes": 11,
+    "party": 2,
+    "name": "Tennessee",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "TX",
+    "val": "48",
+    "votes": 38,
+    "party": 2,
+    "name": "Texas",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "UT",
+    "val": "49",
+    "votes": 6,
+    "party": 2,
+    "name": "Utah",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "VT",
+    "val": "50",
+    "votes": 3,
+    "party": 1,
+    "name": "Vermont",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "VA",
+    "val": "51",
+    "votes": 13,
+    "party": 1,
+    "name": "Virginia",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "WA",
+    "val": "53",
+    "votes": 12,
+    "party": 1,
+    "name": "Washington",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "WV",
+    "val": "54",
+    "votes": 5,
+    "party": 2,
+    "name": "West Virginia",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "WI",
+    "val": "55",
+    "votes": 10,
+    "party": 1,
+    "name": "Wisconsin",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "WY",
+    "val": "56",
+    "votes": 3,
+    "party": 2,
+    "name": "Wyoming",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "NE1",
+    "val": "100",
+    "votes": 1,
+    "party": 2,
+    "name": "Nebraska District 1",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "NE2",
+    "val": "101",
+    "votes": 1,
+    "party": 0,
+    "name": "Nebraska District 2",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "NE3",
+    "val": "102",
+    "votes": 1,
+    "party": 2,
+    "name": "Nebraska District 3",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  },
+  {
+    "id": "ME1",
+    "val": "103",
+    "votes": 1,
+    "party": 1,
+    "name": "Maine District 1",
+    "history": [
+      { "year": 2016, "party": 1 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "ME2",
+    "val": "104",
+    "votes": 1,
+    "party": 0,
+    "name": "Maine District 2",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 1 },
+      { "year": 2008, "party": 1 }
+    ]
+  },
+  {
+    "id": "BLANK",
+    "val": "999",
+    "votes": 0,
+    "party": 0,
+    "name": "Blank",
+    "history": [
+      { "year": 2016, "party": 2 },
+      { "year": 2012, "party": 2 },
+      { "year": 2008, "party": 2 }
+    ]
+  }
 ]
