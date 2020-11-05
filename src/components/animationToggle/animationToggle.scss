@@ -8,7 +8,13 @@
   max-width: 900px;
   margin: 15px auto;
   padding: 0 5%;
+  justify-content: space-between;
+}
+
+.animations-container {
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
   font-size: 14px;
   @media screen and (max-width: 400px) {
     font-size: 12px;

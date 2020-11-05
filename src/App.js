@@ -11,22 +11,12 @@ import states from "./data/states.json";
 import { parseURLMapData } from "./utils";
 import ReactTooltip from "react-tooltip";
 import { demColor, repColor } from "./constants/styles";
+import { getPresident } from "./utils";
 
 export default function App() {
   const [stateData, setStateData] = useState(states);
   const [content, setContent] = useState(null);
-
-  function getPresident(year, party) {
-    if (year === 2020) {
-      return party === 1 ? "Biden" : "Trump";
-    } else if (year === 2016) {
-      return party === 1 ? "Clinton" : "Trump";
-    } else if (year === 2012) {
-      return party === 1 ? "Obama" : "Romney";
-    } else if (year === 2008) {
-      return party === 1 ? "Obama" : "McCain";
-    }
-  }
+  const [year, setYear] = useState("Predictor");
 
   function renderTooltip() {
     if (!content) return null;
@@ -75,6 +65,17 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (year === "Predictor") return setStateData(states);
+    const data = stateData.map((el) => {
+      const index = el.history.findIndex((el) => el.year === parseInt(year));
+      const party = el.history[index].party;
+      const votes = el.history[index].votes;
+      return { ...el, party, votes };
+    });
+    setStateData(data);
+  }, [year]);
+
   // Handle clicking on states too small to click directly on the map
   const handleSmallStateClick = (id) => {
     const newStateData = stateData.map((el) => {
@@ -85,12 +86,16 @@ export default function App() {
     setStateData(newStateData);
   };
 
-  console.log(content);
-
   return (
     <main>
       <Header />
-      <VotesBar stateData={stateData} />
+      <VotesBar stateData={stateData} year={year} setYear={setYear} />
+      {year !== "Predictor" && (
+        <div className="title-historical-result">{`${year} ${getPresident(
+          parseInt(year),
+          1
+        )} vs ${getPresident(parseInt(year), 2)}`}</div>
+      )}
       <section className="container">
         <Map
           stateData={stateData}

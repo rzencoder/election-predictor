@@ -2,7 +2,7 @@ import "./animationToggle.scss";
 
 export default function AnimationToggle({ setAnimations, animations }) {
   return (
-    <div className="animations">
+    <div className="animations-container">
       <div className="animations-text">Animations</div>
       <label className="switch">
         <input

@@ -5,8 +5,9 @@ import AnimationToggle from "../animationToggle";
 import Confetti from "react-confetti";
 import CountUp from "react-countup";
 import "./votesBar.scss";
+import { getPresident } from "../../utils";
 
-export default function VotesBar({ stateData }) {
+export default function VotesBar({ stateData, year, setYear }) {
   const [totals, setTotals] = useState({ dem: 0, rep: 0, blank: 0 });
   const [prevTotals, setPrevTotals] = useState({ dem: 0, rep: 0, blank: 0 });
   const [animations, setAnimations] = useState(true);
@@ -30,6 +31,14 @@ export default function VotesBar({ stateData }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stateData]);
 
+  useEffect(() => {
+    if (year !== "Predictor") {
+      setAnimations(false);
+    } else {
+      setAnimations(true);
+    }
+  }, [year]);
+
   return (
     <section className="bar-container">
       <div className="bar-markers">
@@ -52,8 +61,12 @@ export default function VotesBar({ stateData }) {
             />
           )
         }
-        <div>Democrats {totals.dem > 269 && "Win"}</div>
-        <div>Republicans {totals.rep > 269 && "Win"}</div>
+        <div>
+          {getPresident(parseInt(year), 1)} {totals.dem > 269 && "Wins"}
+        </div>
+        <div>
+          {getPresident(parseInt(year), 2)} {totals.rep > 269 && "Wins"}
+        </div>
       </div>
       <div className="bar">
         <div
@@ -73,7 +86,18 @@ export default function VotesBar({ stateData }) {
           <CountUp start={prevTotals.rep} end={totals.rep} />
         </div>
       </div>
-      <AnimationToggle setAnimations={setAnimations} animations={animations} />
+      <div className="animations">
+        <select value={year} onChange={({ target }) => setYear(target.value)}>
+          <option value="Predictor">Predictor</option>
+          {stateData[0].history.map((el) => (
+            <option value={el.year}>{`${el.year} Result`}</option>
+          ))}
+        </select>
+        <AnimationToggle
+          setAnimations={setAnimations}
+          animations={animations}
+        />
+      </div>
     </section>
   );
 }
