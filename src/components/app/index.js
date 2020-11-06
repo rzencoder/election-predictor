@@ -30,11 +30,14 @@ export default function App() {
       const mapParameter = urlParams.get("map");
       // Checking if 19 as data stored in base 3. 50 states + 6 districts + blank
       if (mapParameter.length === 19) {
-        const mapString = parseURLMapData(mapParameter);
-        const mapData = stateData.map((el, index) => {
-          return { ...el, party: parseInt(mapString[index]) };
-        });
-        setStateData(mapData);
+        setTimeout(() => {
+          const mapString = parseURLMapData(mapParameter);
+          const mapData = stateData.map((el, index) => {
+            return { ...el, party: parseInt(mapString[index]) };
+          });
+          setStateData(mapData);
+          setAnimations(false);
+        }, 200);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
