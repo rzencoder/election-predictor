@@ -1,6 +1,7 @@
 import "./animationToggle.scss";
+import { memo } from "react";
 
-export default function AnimationToggle({ setAnimations, animations }) {
+function AnimationToggle({ setAnimations, animations }) {
   return (
     <div className="animations-container">
       <div className="animations-text">Animations</div>
@@ -16,3 +17,5 @@ export default function AnimationToggle({ setAnimations, animations }) {
     </div>
   );
 }
+
+export default memo(AnimationToggle);

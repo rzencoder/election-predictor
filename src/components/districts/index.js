@@ -1,8 +1,19 @@
 import { getStateColor } from "../../utils";
 import districts from "../../data/districts.json";
+import { memo } from "react";
 import "./districts.scss";
 
-export default function Districts({ stateData, handleSmallStateClick }) {
+function Districts({ stateData, setStateData }) {
+  // Handle clicking on states too small to click directly on the map
+  const handleSmallStateClick = (id) => {
+    const newStateData = stateData.map((el) => {
+      // Change party when state selected and roll back to a blank if neither rep or dem.
+      const partyValue = el.party === 2 ? 0 : el.party + 1;
+      return el.id === id ? { ...el, party: partyValue } : el;
+    });
+    setStateData(newStateData);
+  };
+
   // Render a table row for Maine and Nebraska
   function renderStateDistricts(stateDistricts) {
     return (
@@ -58,3 +69,5 @@ export default function Districts({ stateData, handleSmallStateClick }) {
     </div>
   );
 }
+
+export default memo(Districts);

@@ -1,6 +1,6 @@
 # Election Predictor
 
-An interactive map predictor for the US presidential election. Built with React and Sass with react-simple-maps providing the SVG of the United States.
+An interactive map predictor for the US presidential election. Users are able to click on states to change the party and calculate the election outcome. Previous election results up to the 2000 election can be viewed. Built with React and Sass with react-simple-maps providing the SVG of the United States.
 
 ### Demo
 

@@ -1,6 +1,7 @@
 import "./header.scss";
+import { memo } from "react";
 
-export default function Header() {
+function Header() {
   return (
     <header>
       <h1 className="header-title">
@@ -19,3 +20,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default memo(Header);

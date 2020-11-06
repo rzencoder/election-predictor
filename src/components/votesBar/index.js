@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useWindowSize } from "../../hooks/use-window-size";
 import { demColor, repColor } from "../../constants/styles";
-import AnimationToggle from "../animationToggle";
 import Confetti from "react-confetti";
 import CountUp from "react-countup";
 import "./votesBar.scss";
 import { getPresident } from "../../utils";
 
-export default function VotesBar({ stateData, year, setYear }) {
+function VotesBar({ stateData, year, animations }) {
   const [totals, setTotals] = useState({ dem: 0, rep: 0, blank: 0 });
   const [prevTotals, setPrevTotals] = useState({ dem: 0, rep: 0, blank: 0 });
-  const [animations, setAnimations] = useState(true);
   const size = useWindowSize();
 
   // Updated total votes for each party when state data is changed
@@ -30,14 +28,6 @@ export default function VotesBar({ stateData, year, setYear }) {
     setTotals(data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stateData]);
-
-  useEffect(() => {
-    if (year !== "Predictor") {
-      setAnimations(false);
-    } else {
-      setAnimations(true);
-    }
-  }, [year]);
 
   return (
     <section className="bar-container">
@@ -61,10 +51,10 @@ export default function VotesBar({ stateData, year, setYear }) {
             />
           )
         }
-        <div>
+        <div className={totals.dem > 269 ? "win" : undefined}>
           {getPresident(parseInt(year), 1)} {totals.dem > 269 && "Wins"}
         </div>
-        <div>
+        <div className={totals.rep > 269 ? "win" : undefined}>
           {getPresident(parseInt(year), 2)} {totals.rep > 269 && "Wins"}
         </div>
       </div>
@@ -86,18 +76,8 @@ export default function VotesBar({ stateData, year, setYear }) {
           <CountUp start={prevTotals.rep} end={totals.rep} />
         </div>
       </div>
-      <div className="animations">
-        <select value={year} onChange={({ target }) => setYear(target.value)}>
-          <option value="Predictor">Predictor</option>
-          {stateData[0].history.map((el) => (
-            <option value={el.year}>{`${el.year} Result`}</option>
-          ))}
-        </select>
-        <AnimationToggle
-          setAnimations={setAnimations}
-          animations={animations}
-        />
-      </div>
     </section>
   );
 }
+
+export default memo(VotesBar);

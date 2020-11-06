@@ -6,3 +6,6 @@ export { default as VotesBar } from "./votesBar";
 export { default as ShareLink } from "./shareLink";
 export { default as Districts } from "./districts";
 export { default as AnimationToggle } from "./animationToggle";
+export { default as Tooltip } from "./tooltip";
+export { default as App } from "./app";
+export { default as YearSelect } from "./yearSelect";

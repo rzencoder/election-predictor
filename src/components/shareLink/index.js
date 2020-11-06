@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { convertMapData } from "../../utils";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import copyIcon from "./copy-icon.png";
+import { memo } from "react";
 import "./shareLink.scss";
 
-export default function ShareLink({ stateData }) {
+function ShareLink({ stateData }) {
   const [showLink, setShowLink] = useState(false);
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false); // eslint-disable-line no-unused-vars
@@ -53,3 +54,5 @@ export default function ShareLink({ stateData }) {
     </section>
   );
 }
+
+export default memo(ShareLink);

@@ -1,8 +1,19 @@
 import smallStatesData from "../../data/smallStates.json";
+import { memo } from "react";
 import { getStateColor } from "../../utils";
 import "./smallStates.scss";
 
-export default function SmallStates({ stateData, handleSmallStateClick }) {
+function SmallStates({ stateData, setStateData }) {
+  // Handle clicking on states too small to click directly on the map
+  const handleSmallStateClick = (id) => {
+    const newStateData = stateData.map((el) => {
+      // Change party when state selected and roll back to a blank if neither rep or dem.
+      const partyValue = el.party === 2 ? 0 : el.party + 1;
+      return el.id === id ? { ...el, party: partyValue } : el;
+    });
+    setStateData(newStateData);
+  };
+
   return (
     <div className="small-states-container">
       {smallStatesData.map((el) => {
@@ -27,3 +38,5 @@ export default function SmallStates({ stateData, handleSmallStateClick }) {
     </div>
   );
 }
+
+export default memo(SmallStates);
