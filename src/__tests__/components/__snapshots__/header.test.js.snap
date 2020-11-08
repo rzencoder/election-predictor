@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders the <Header /> 1`] = `
+<header>
+  <h1
+    class="header-title"
+  >
+    <span
+      class="title-span"
+    >
+      US
+    </span>
+     Presidential
+     
+    <span
+      class="title-span"
+    >
+      Election
+    </span>
+  </h1>
+  <div
+    class="header-subtitle"
+  >
+    <span
+      class="header-star red-star"
+    >
+      ★
+    </span>
+    <span
+      class="header-star blue-star"
+    >
+      ★
+    </span>
+    <span
+      class="header-star red-star"
+    >
+      ★
+    </span>
+    <span
+      class="header-subtitle-text"
+    >
+      Predictor
+    </span>
+    <span
+      class="header-star red-star"
+    >
+      ★
+    </span>
+    <span
+      class="header-star blue-star"
+    >
+      ★
+    </span>
+    <span
+      class="header-star red-star"
+    >
+      ★
+    </span>
+  </div>
+</header>
+`;
