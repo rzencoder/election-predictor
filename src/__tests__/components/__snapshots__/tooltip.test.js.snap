@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> renders different color with different party 1`] = `
+<div>
+  <div
+    class="tooltip-state"
+  >
+    Delaware
+  </div>
+  <div
+    class="tooltip-year"
+  >
+    3
+     electoral votes
+  </div>
+  <div
+    class="tooltip-history"
+  >
+    <div>
+      History
+    </div>
+    <ul>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2020
+         
+        Biden
+      </li>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2016
+         
+        Clinton
+      </li>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2012
+         
+        Obama
+      </li>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2008
+         
+        Obama
+      </li>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2004
+         
+        Kerry
+      </li>
+      <li
+        style="color: rgb(19, 117, 182);"
+      >
+        2000
+         
+        Gore
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Tooltip /> renders the <Tooltip /> 1`] = `
+<div>
+  <div
+    class="tooltip-state"
+  >
+    Alabama
+  </div>
+  <div
+    class="tooltip-year"
+  >
+    9
+     electoral votes
+  </div>
+  <div
+    class="tooltip-history"
+  >
+    <div>
+      History
+    </div>
+    <ul>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2020
+         
+        Trump
+      </li>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2016
+         
+        Trump
+      </li>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2012
+         
+        Romney
+      </li>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2008
+         
+        McCain
+      </li>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2004
+         
+        Bush
+      </li>
+      <li
+        style="color: rgb(201, 40, 45);"
+      >
+        2000
+         
+        Bush
+      </li>
+    </ul>
+  </div>
+</div>
+`;

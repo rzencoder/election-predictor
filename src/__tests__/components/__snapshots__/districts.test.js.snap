@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Districts /> renders the <Districts /> 1`] = `
+<div
+  class="districts-container"
+>
+  <table>
+    <thead>
+      <tr
+        class="table-headers"
+      >
+        <td />
+        <td
+          rowspan="2"
+        >
+          state
+        </td>
+        <td
+          colspan="3"
+        >
+          districts
+        </td>
+      </tr>
+      <tr
+        class="district-numbers"
+      >
+        <td />
+        <td>
+          1
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          3
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          class="district-state-name"
+        >
+          NE
+        </td>
+        <td
+          class="district-votes rep-state"
+        >
+          <button>
+            2
+          </button>
+        </td>
+        <td
+          class="district-votes rep-state"
+        >
+          <button>
+            1
+          </button>
+        </td>
+        <td
+          class="district-votes blank-state"
+        >
+          <button>
+            1
+          </button>
+        </td>
+        <td
+          class="district-votes rep-state"
+        >
+          <button>
+            1
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="district-state-name"
+        >
+          ME
+        </td>
+        <td
+          class="district-votes dem-state"
+        >
+          <button>
+            2
+          </button>
+        </td>
+        <td
+          class="district-votes dem-state"
+        >
+          <button>
+            1
+          </button>
+        </td>
+        <td
+          class="district-votes blank-state"
+        >
+          <button>
+            1
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

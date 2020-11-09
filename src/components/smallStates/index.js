@@ -14,6 +14,8 @@ function SmallStates({ stateData, setStateData }) {
     setStateData(newStateData);
   };
 
+  if (!stateData) return null;
+
   return (
     <div className="small-states-container">
       {smallStatesData.map((el) => {

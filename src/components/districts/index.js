@@ -45,6 +45,8 @@ function Districts({ stateData, setStateData }) {
     );
   }
 
+  if (!stateData) return null;
+
   return (
     <div className="districts-container">
       <table>

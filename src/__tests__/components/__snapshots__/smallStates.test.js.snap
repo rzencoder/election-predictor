@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
+<div
+  class="small-states-container"
+>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      3
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        VT
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button blank-state"
+    >
+      4
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        NH
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      11
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        MA
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      4
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        RI
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      7
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        CT
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      14
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        NJ
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      3
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        DE
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      10
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        MD
+      </div>
+    </div>
+  </div>
+  <div
+    class="button-container"
+  >
+    <button
+      class="small-state-button dem-state"
+    >
+      3
+    </button>
+    <div
+      class="small-state-name"
+    >
+      <div>
+        DC
+      </div>
+    </div>
+  </div>
+</div>
+`;

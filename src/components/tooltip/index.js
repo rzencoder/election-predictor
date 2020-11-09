@@ -4,6 +4,7 @@ import { getPresident } from "../../utils";
 import "./tooltip.scss";
 
 function Tooltip({ matchingState }) {
+  if (!matchingState) return null;
   return (
     <div>
       <div className="tooltip-state">{matchingState.name}</div>

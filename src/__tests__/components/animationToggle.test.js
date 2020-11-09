@@ -19,6 +19,6 @@ describe("<AnimationToggle />", () => {
     );
     expect(setAnimations.mock.calls.length).toBe(0);
     userEvent.click(getByTestId("animations-toggle"));
-    expect(setAnimations.mock.calls.length).toBe();
+    expect(setAnimations.mock.calls.length).toBe(1);
   });
 });
