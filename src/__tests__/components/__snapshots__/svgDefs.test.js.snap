@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SVGDefs /> renders the <SVGDefs /> 1`] = `
+<svg>
+  <defs>
+    <lineargradient
+      id="Gradient-1"
+      x1="10%"
+      x2="2%"
+      y1="4%"
+      y2="1%"
+    >
+      <stop
+        offset="0%"
+        stop-color="#c9282d"
+      />
+      <stop
+        offset="25%"
+        stop-color="#97804a"
+      />
+      <stop
+        offset="50%"
+        stop-color="#c9282d"
+      />
+      <stop
+        offset="75%"
+        stop-color="#c9282d"
+      />
+    </lineargradient>
+    <lineargradient
+      id="Gradient-2"
+      x1="10%"
+      x2="2%"
+      y1="4%"
+      y2="1%"
+    >
+      <stop
+        offset="0%"
+        stop-color="#1375b6"
+      />
+      <stop
+        offset="33%"
+        stop-color="#97804a"
+      />
+      <stop
+        offset="66%"
+        stop-color="#1375b6"
+      />
+    </lineargradient>
+    <lineargradient
+      data-testid="nebraska-gradient"
+      href="#Gradient-1"
+      id="nebraska-style"
+      spreadMethod="repeat"
+    />
+    <lineargradient
+      href="#Gradient-2"
+      id="maine-style"
+      spreadMethod="repeat"
+    />
+  </defs>
+</svg>
+`;

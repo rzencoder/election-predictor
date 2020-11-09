@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShareLink /> renders the <ShareLink /> 1`] = `
+<section
+  class="share-link-container"
+>
+  <button
+    class="share-link-button"
+    data-testid="share-link-button"
+  >
+    &lt;/&gt; 
+    Share Map
+  </button>
+</section>
+`;
+
+exports[`<ShareLink /> renders the link when the share map button is clicked 1`] = `
+<section
+  class="share-link-container"
+>
+  <div
+    class="link-copy"
+  >
+    <div
+      class="link-text"
+    >
+      http://localhost:3000?map=xvmawhvjzrmfuqtmtti
+    </div>
+    <button
+      class="copy-button"
+    >
+      <img
+        alt=""
+        src="copy-icon.png"
+      />
+      Copy
+    </button>
+  </div>
+</section>
+`;

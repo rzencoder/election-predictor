@@ -3,7 +3,11 @@ import "./yearSelect.scss";
 
 function YearSelect({ yearData, setYear, year }) {
   return (
-    <select value={year} onChange={({ target }) => setYear(target.value)}>
+    <select
+      data-testid="year-select"
+      value={year}
+      onChange={({ target }) => setYear(target.value)}
+    >
       <option value="Predictor">Predictor</option>
       {yearData.history.map((el) => (
         <option

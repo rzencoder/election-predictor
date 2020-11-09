@@ -27,6 +27,7 @@ export default function SVGDefs({ stateData }) {
       </linearGradient>
 
       <linearGradient
+        data-testid="nebraska-gradient"
         id="nebraska-style"
         href="#Gradient-1"
         spreadMethod="repeat"

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<YearSelect /> renders the <YearSelect /> 1`] = `
+<select
+  data-testid="year-select"
+>
+  <option
+    value="Predictor"
+  >
+    Predictor
+  </option>
+  <option
+    value="2020"
+  >
+    2020 Result
+  </option>
+  <option
+    value="2016"
+  >
+    2016 Result
+  </option>
+  <option
+    value="2012"
+  >
+    2012 Result
+  </option>
+  <option
+    value="2008"
+  >
+    2008 Result
+  </option>
+  <option
+    value="2004"
+  >
+    2004 Result
+  </option>
+  <option
+    value="2000"
+  >
+    2000 Result
+  </option>
+</select>
+`;

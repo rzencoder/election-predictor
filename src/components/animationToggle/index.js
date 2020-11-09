@@ -9,6 +9,7 @@ function AnimationToggle({ setAnimations, animations }) {
         <input
           checked={animations}
           type="checkbox"
+          data-testid="animations-toggle"
           aria-label="toggle-animations"
           onChange={() => setAnimations(!animations)}
         />

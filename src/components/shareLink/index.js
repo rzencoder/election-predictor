@@ -32,6 +32,7 @@ function ShareLink({ stateData }) {
       {!showLink && (
         <button
           className="share-link-button"
+          data-testid="share-link-button"
           onClick={() => setShowLink(!showLink)}
         >
           {"</> "}Share Map

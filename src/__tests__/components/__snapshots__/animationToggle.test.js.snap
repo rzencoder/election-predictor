@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AnimationToggle /> renders the <AnimationToggle /> 1`] = `
+<div
+  class="animations-container"
+>
+  <div
+    class="animations-text"
+  >
+    Animations
+  </div>
+  <label
+    class="switch"
+  >
+    <input
+      aria-label="toggle-animations"
+      checked=""
+      data-testid="animations-toggle"
+      type="checkbox"
+    />
+    <span
+      class="slider round"
+    />
+  </label>
+</div>
+`;
