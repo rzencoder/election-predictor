@@ -1,6 +1,6 @@
 import { demColor, repColor, blankColor } from "../constants/styles";
 
-export default function getStateColor(party) {
+export default function getDistrictColor(party) {
   switch (party) {
     case 0:
       return blankColor;

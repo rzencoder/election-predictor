@@ -7,6 +7,6 @@ export default function getStateColor(party) {
     case 2:
       return "rep-state";
     default:
-      return "#000";
+      return "";
   }
 }

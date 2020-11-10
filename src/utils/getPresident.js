@@ -1,4 +1,5 @@
-export default function getPresident(year, party) {
+export default function getPresident(year = "Predictor", party) {
+  if (party > 2 || party < 1) return "";
   if (year === 2020) {
     return party === 1 ? "Biden" : "Trump";
   } else if (year === 2016) {
