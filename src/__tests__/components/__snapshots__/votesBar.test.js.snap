@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VotesBar /> renders the <VotesBar /> 1`] = `
+<section
+  class="bar-container"
+  data-testid="votes-bar"
+>
+  <div
+    class="bar-markers"
+  >
+    <div
+      class="markers marker-top"
+    />
+    <div
+      class="markers marker-bottom"
+    />
+  </div>
+  <div
+    class="bar-labels"
+  >
+    <div>
+      Democrats
+       
+    </div>
+    <div
+      class="win"
+    >
+      Republicans
+       
+      Win
+    </div>
+  </div>
+  <div
+    class="bar"
+  >
+    <div
+      class="party-bar dem-bar false"
+      style="width: 0.929368029739777%;"
+    >
+      <span>
+        0
+      </span>
+    </div>
+    <div
+      class="swing-bar"
+      style="width: 0.37174721189591076%;"
+    />
+    <div
+      class="party-bar rep-bar win"
+      style="width: 50.55762081784386%;"
+    >
+      <span>
+        0
+      </span>
+    </div>
+  </div>
+</section>
+`;

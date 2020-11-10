@@ -52,7 +52,8 @@
       "!<rootDir>/src/index.js",
       "!<rootDir>/src/hooks/*.js",
       "!<rootDir>/src/utils/index.js",
-      "!<rootDir>/src/components/index.js"
+      "!<rootDir>/src/components/index.js",
+      "!<rootDir>/src/components/app/index.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^5.5.0"
+    "cypress": "^5.5.0",
+    "jest-canvas-mock": "^2.3.0"
   }
 }

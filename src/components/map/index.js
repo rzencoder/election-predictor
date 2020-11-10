@@ -34,12 +34,15 @@ function Map({ stateData, setStateData, setTooltipContent }) {
     setStateData(newStateData);
   };
 
+  if (!stateData) return null;
+
   return (
     <div className="map-container">
       <ComposableMap
         aria-label="Map of United States"
         projection="geoAlbersUsa"
         data-tip=""
+        data-testid="us-map"
       >
         <SVGDefs stateData={stateData} />
         <Geographies geography={geoData}>
@@ -56,6 +59,7 @@ function Map({ stateData, setStateData, setTooltipContent }) {
                     geography={geo}
                     role="button"
                     aria-label={`${matchingState.id} map state`}
+                    data-testid={`${matchingState.id}-state`}
                     onClick={() => handleStateClick(geo.id)}
                     onKeyDown={({ key }) => {
                       key === "Enter" && handleStateClick(geo.id);

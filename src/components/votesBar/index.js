@@ -13,6 +13,7 @@ function VotesBar({ stateData, year, animations }) {
 
   // Updated total votes for each party when state data is changed
   useEffect(() => {
+    if (!stateData) return null;
     setPrevTotals({ ...totals });
     const data = stateData.reduce(
       (acc, cur) => {
@@ -29,8 +30,10 @@ function VotesBar({ stateData, year, animations }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stateData]);
 
+  if (!stateData || !year) return null;
+
   return (
-    <section className="bar-container">
+    <section className="bar-container" data-testid="votes-bar">
       <div className="bar-markers">
         <div className="markers marker-top" />
         <div className="markers marker-bottom" />
@@ -52,10 +55,12 @@ function VotesBar({ stateData, year, animations }) {
           )
         }
         <div className={totals.dem > 269 ? "win" : undefined}>
-          {getPresident(parseInt(year), 1)} {totals.dem > 269 && "Wins"}
+          {getPresident(parseInt(year), 1)}{" "}
+          {totals.dem > 269 && (year === "Predictor" ? "Win" : "Wins")}
         </div>
         <div className={totals.rep > 269 ? "win" : undefined}>
-          {getPresident(parseInt(year), 2)} {totals.rep > 269 && "Wins"}
+          {getPresident(parseInt(year), 2)}{" "}
+          {totals.rep > 269 && (year === "Predictor" ? "Win" : "Wins")}
         </div>
       </div>
       <div className="bar">
