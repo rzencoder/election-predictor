@@ -125,7 +125,7 @@ describe("<VotesBar />", () => {
   });
 
   it("displays democrats as winners with enough votes", () => {
-    const { container, getByText, queryByText } = render(
+    const { getByText, queryByText } = render(
       <VotesBar year={"Predictor"} animations={false} stateData={demData} />
     );
     expect(queryByText("Republicans Win")).toBeFalsy();

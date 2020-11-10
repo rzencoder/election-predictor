@@ -1,6 +1,8 @@
 // Convert party for each state from numerical value of 0,1 or 2 into an alphabetic character to enable sharing the map data via an url parameter
 
 export default function convertMapData(data) {
+  if (!data) return "";
+
   let mapData = data.map((el) => el.party.toString());
   // Group data into sets of 3 to convert into base3
   const dataInBase3 = [];

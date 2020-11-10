@@ -1,16 +1,18 @@
 import { getPresident } from "../../utils";
 
-test("getPresident with data", () => {
-  const result = getPresident(2020, 1);
-  expect(result).toBe("Biden");
-});
+describe("getPresident", () => {
+  test("return president name with data", () => {
+    const result = getPresident(2020, 1);
+    expect(result).toBe("Biden");
+  });
 
-test("getPresident with no party returns empty string", () => {
-  const result = getPresident(2020, null);
-  expect(result).toBe("");
-});
+  test("return empty string with no party", () => {
+    const result = getPresident(2020, null);
+    expect(result).toBe("");
+  });
 
-test("getPresident with no year returns dem/rep", () => {
-  const result = getPresident(undefined, 2);
-  expect(result).toBe("Republicans");
+  test("return democrats/republicans with no year", () => {
+    const result = getPresident(undefined, 2);
+    expect(result).toBe("Republicans");
+  });
 });
