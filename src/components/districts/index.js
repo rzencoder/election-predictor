@@ -28,6 +28,7 @@ function Districts({ stateData, setStateData }) {
               className={`district-votes ${background}`}
             >
               <button
+                id={`${matchingState.id}-district`}
                 onClick={() => {
                   handleSmallStateClick(el);
                 }}

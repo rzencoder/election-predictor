@@ -25,6 +25,7 @@ function SmallStates({ stateData, setStateData }) {
           <div key={`${matchingState.id}-state`} className="button-container">
             <button
               className={`small-state-button ${background}`}
+              id={`${matchingState.id}-small-state`}
               onClick={() => {
                 handleSmallStateClick(el);
               }}
