@@ -9,6 +9,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="VT-small-state"
     >
       3
     </button>
@@ -25,6 +26,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button blank-state"
+      id="NH-small-state"
     >
       4
     </button>
@@ -41,6 +43,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="MA-small-state"
     >
       11
     </button>
@@ -57,6 +60,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="RI-small-state"
     >
       4
     </button>
@@ -73,6 +77,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="CT-small-state"
     >
       7
     </button>
@@ -89,6 +94,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="NJ-small-state"
     >
       14
     </button>
@@ -105,6 +111,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="DE-small-state"
     >
       3
     </button>
@@ -121,6 +128,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="MD-small-state"
     >
       10
     </button>
@@ -137,6 +145,7 @@ exports[`<SmallStates /> renders the <SmallStates /> 1`] = `
   >
     <button
       class="small-state-button dem-state"
+      id="DC-small-state"
     >
       3
     </button>

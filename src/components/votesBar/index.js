@@ -36,6 +36,7 @@ function VotesBar({ stateData, year, animations }) {
     <section className="bar-container" data-testid="votes-bar">
       <div className="bar-markers">
         <div className="markers marker-top" />
+        <div className="marker-divider" />
         <div className="markers marker-bottom" />
       </div>
       <div className="bar-labels">

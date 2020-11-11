@@ -53,8 +53,13 @@
 }
 
 .marker-bottom {
-  margin-top: 35px;
   transform: rotate(180deg);
+}
+
+.marker-divider {
+  background-color: #fff;
+  height: 35px;
+  width: 1px;
 }
 
 .bar {

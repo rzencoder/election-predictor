@@ -46,28 +46,36 @@ exports[`<Districts /> renders the <Districts /> 1`] = `
         <td
           class="district-votes rep-state"
         >
-          <button>
+          <button
+            id="NE-district"
+          >
             2
           </button>
         </td>
         <td
           class="district-votes rep-state"
         >
-          <button>
+          <button
+            id="NE1-district"
+          >
             1
           </button>
         </td>
         <td
           class="district-votes blank-state"
         >
-          <button>
+          <button
+            id="NE2-district"
+          >
             1
           </button>
         </td>
         <td
           class="district-votes rep-state"
         >
-          <button>
+          <button
+            id="NE3-district"
+          >
             1
           </button>
         </td>
@@ -81,21 +89,27 @@ exports[`<Districts /> renders the <Districts /> 1`] = `
         <td
           class="district-votes dem-state"
         >
-          <button>
+          <button
+            id="ME-district"
+          >
             2
           </button>
         </td>
         <td
           class="district-votes dem-state"
         >
-          <button>
+          <button
+            id="ME1-district"
+          >
             1
           </button>
         </td>
         <td
           class="district-votes blank-state"
         >
-          <button>
+          <button
+            id="ME2-district"
+          >
             1
           </button>
         </td>
