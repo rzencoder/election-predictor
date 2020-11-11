@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/election-predictor/static/css/main.05f83e48.chunk.css",
-    "main.js": "/election-predictor/static/js/main.502d30b0.chunk.js",
-    "main.js.map": "/election-predictor/static/js/main.502d30b0.chunk.js.map",
+    "main.css": "/election-predictor/static/css/main.54dec664.chunk.css",
+    "main.js": "/election-predictor/static/js/main.6ed93baa.chunk.js",
+    "main.js.map": "/election-predictor/static/js/main.6ed93baa.chunk.js.map",
     "runtime-main.js": "/election-predictor/static/js/runtime-main.3f99cc8a.js",
     "runtime-main.js.map": "/election-predictor/static/js/runtime-main.3f99cc8a.js.map",
     "static/js/2.1dd5b6e6.chunk.js": "/election-predictor/static/js/2.1dd5b6e6.chunk.js",
     "static/js/2.1dd5b6e6.chunk.js.map": "/election-predictor/static/js/2.1dd5b6e6.chunk.js.map",
     "index.html": "/election-predictor/index.html",
-    "static/css/main.05f83e48.chunk.css.map": "/election-predictor/static/css/main.05f83e48.chunk.css.map",
+    "static/css/main.54dec664.chunk.css.map": "/election-predictor/static/css/main.54dec664.chunk.css.map",
     "static/js/2.1dd5b6e6.chunk.js.LICENSE.txt": "/election-predictor/static/js/2.1dd5b6e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3f99cc8a.js",
     "static/js/2.1dd5b6e6.chunk.js",
-    "static/css/main.05f83e48.chunk.css",
-    "static/js/main.502d30b0.chunk.js"
+    "static/css/main.54dec664.chunk.css",
+    "static/js/main.6ed93baa.chunk.js"
   ]
 }
