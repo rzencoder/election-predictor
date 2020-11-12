@@ -69,3 +69,44 @@
     padding-right: 4px;
   }
 }
+
+.message {
+  visibility: hidden;
+  margin-left: -125px;
+  background-color: #3a9f3a;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 15px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 70px;
+}
+
+.message.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.6s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 70px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 70px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

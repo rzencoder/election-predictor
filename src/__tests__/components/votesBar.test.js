@@ -154,11 +154,7 @@ describe("<VotesBar />", () => {
 
   // it("renders confetti with winner and animations on", () => {
   //   const { getByText, queryByText } = render(
-  //     <VotesBar
-  //       year={"Predictor"}
-  //       animations={true}
-  //       stateData={data}
-  //     />
+  //     <VotesBar year={"Predictor"} animations={true} stateData={data} />
   //   );
   //   expect(getByText("Republicans Win")).toBeTruthy();
   // });

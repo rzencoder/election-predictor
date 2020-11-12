@@ -11,6 +11,11 @@ exports[`<ShareLink /> renders the <ShareLink /> 1`] = `
     &lt;/&gt; 
     Share Map
   </button>
+  <div
+    class="message undefined"
+  >
+    Link copied to clipboard
+  </div>
 </section>
 `;
 
@@ -28,6 +33,7 @@ exports[`<ShareLink /> renders the link when the share map button is clicked 1`]
     </div>
     <button
       class="copy-button"
+      disabled=""
     >
       <img
         alt=""
@@ -35,6 +41,11 @@ exports[`<ShareLink /> renders the link when the share map button is clicked 1`]
       />
       Copy
     </button>
+  </div>
+  <div
+    class="message show"
+  >
+    Link copied to clipboard
   </div>
 </section>
 `;

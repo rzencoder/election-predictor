@@ -9,6 +9,7 @@ function ShareLink({ stateData }) {
   const [showLink, setShowLink] = useState(false);
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false); // eslint-disable-line no-unused-vars
+  const [showMessage, setShowMessage] = useState(false);
 
   const linkURL = process.env.REACT_APP_LINK_URL || "http://localhost:3000";
 
@@ -27,6 +28,18 @@ function ShareLink({ stateData }) {
     setLink("");
   }, [stateData]);
 
+  // Display and remove copy message
+  useEffect(() => {
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  }, [showMessage]);
+
+  function handleCopyLink() {
+    setCopied(true);
+    setShowMessage(true);
+  }
+
   return (
     <section className="share-link-container">
       {!showLink && (
@@ -43,15 +56,18 @@ function ShareLink({ stateData }) {
           <div className="link-text">{`${linkURL}?map=${link}`}</div>
           <CopyToClipboard
             text={`${linkURL}?map=${link}`}
-            onCopy={() => setCopied(true)}
+            onCopy={() => handleCopyLink()}
           >
-            <button className="copy-button">
+            <button className="copy-button" disabled={showMessage}>
               <img src={copyIcon} alt="" />
               Copy
             </button>
           </CopyToClipboard>
         </div>
       )}
+      <div className={`message ${showMessage ? "show" : undefined}`}>
+        Link copied to clipboard
+      </div>
     </section>
   );
 }
