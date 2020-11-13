@@ -9,13 +9,13 @@ exports[`<VotesBar /> renders the <VotesBar /> 1`] = `
     class="bar-markers"
   >
     <div
-      class="markers marker-top"
+      class="markers marker-top rep-marker"
     />
     <div
       class="marker-divider"
     />
     <div
-      class="markers marker-bottom"
+      class="markers marker-bottom rep-marker"
     />
   </div>
   <div

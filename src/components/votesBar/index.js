@@ -35,9 +35,25 @@ function VotesBar({ stateData, year, animations }) {
   return (
     <section className="bar-container" data-testid="votes-bar">
       <div className="bar-markers">
-        <div className="markers marker-top" />
+        <div
+          className={`markers marker-top ${
+            totals.dem > 269
+              ? "dem-marker"
+              : totals.rep > 269
+              ? "rep-marker"
+              : undefined
+          }`}
+        />
         <div className="marker-divider" />
-        <div className="markers marker-bottom" />
+        <div
+          className={`markers marker-bottom ${
+            totals.dem > 269
+              ? "dem-marker"
+              : totals.rep > 269
+              ? "rep-marker"
+              : undefined
+          }`}
+        />
       </div>
       <div className="bar-labels">
         {

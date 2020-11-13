@@ -13,17 +13,17 @@ export default function SVGDefs({ stateData }) {
 
   return (
     <defs>
-      <linearGradient id="Gradient-1" x1="10%" y1="4%" x2="2%" y2="1%">
-        <stop offset="0%" stopColor={NE1} />
+      <linearGradient id="Gradient-1" x1="40%" y1="40%" x2="10%" y2="10%">
+        <stop offset="10%" stopColor={NE1} />
         <stop offset="25%" stopColor={NE2} />
-        <stop offset="50%" stopColor={NE3} />
-        <stop offset="75%" stopColor={NE} />
+        <stop offset="40%" stopColor={NE3} />
+        <stop offset="60%" stopColor={NE} />
       </linearGradient>
 
-      <linearGradient id="Gradient-2" x1="10%" y1="4%" x2="2%" y2="1%">
-        <stop offset="0%" stopColor={ME1} />
-        <stop offset="33%" stopColor={ME2} />
-        <stop offset="66%" stopColor={ME} />
+      <linearGradient id="Gradient-2" x1="40%" y1="40%" x2="22%" y2="10%">
+        <stop offset="15%" stopColor={ME1} />
+        <stop offset="30%" stopColor={ME2} />
+        <stop offset="60%" stopColor={ME} />
       </linearGradient>
 
       <linearGradient

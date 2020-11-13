@@ -1,5 +1,8 @@
 @import "../../scss/_variables.scss";
 
+$demWin: #0248a4;
+$repWin: #dd0d0d;
+
 .bar-container {
   margin-top: 40px;
   @media screen and (max-width: 450px) {
@@ -50,6 +53,7 @@
   border-style: solid;
   border-width: 10px 10px 0 10px;
   border-color: #222 transparent transparent transparent;
+  transition: border-color 0.5s;
 }
 
 .marker-bottom {
@@ -60,6 +64,14 @@
   background-color: #fff;
   height: 35px;
   width: 1px;
+}
+
+.dem-marker {
+  border-color: $demWin transparent transparent transparent;
+}
+
+.rep-marker {
+  border-color: $repWin transparent transparent transparent;
 }
 
 .bar {
@@ -86,7 +98,7 @@
   justify-content: flex-start;
   transition: all 0.5s;
   &.win {
-    background-color: #0248a4;
+    background-color: $demWin;
   }
 }
 
@@ -96,7 +108,7 @@
   justify-content: flex-end;
   transition: all 0.5s;
   &.win {
-    background-color: #dd0d0d;
+    background-color: $repWin;
   }
 }
 
